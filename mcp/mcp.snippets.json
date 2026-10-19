@@ -3,24 +3,26 @@
     "filesystem": {
       "type": "stdio",
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-filesystem", "/tmp"]
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:/Users/juice/.workbuddy/mcp-fs"
+      ],
+      "defer_loading": false
     },
     "memory": {
       "type": "stdio",
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-memory"]
+      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-memory"],
+      "defer_loading": false
     },
     "time": {
       "type": "stdio",
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "time-mcp"]
-    },
-    "github": {
-      "type": "http",
-      "url": "https://api.githubcopilot.com/mcp/",
-      "headers": {
-        "Authorization": "Bearer ${GITHUB_MCP_PAT}"
-      }
+      "args": ["/c", "npx", "-y", "time-mcp"],
+      "defer_loading": false
     }
   }
 }
