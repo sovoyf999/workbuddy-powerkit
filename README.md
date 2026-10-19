@@ -71,7 +71,9 @@ workbuddy-powerkit/
 
 ## 状态与 CI / Status
 
-v0.1 目标「四层资产齐备」，分轮构建中，退出标准见 [docs/ROADMAP.md](docs/ROADMAP.md)。CI 状态徽章与绿跑记录将在仓库推送到 GitHub 后回填；本地提交前请先跑 [CONTRIBUTING.md](CONTRIBUTING.md) 中的两个校验脚本。
+![CI](https://github.com/sovoyf999/workbuddy-powerkit/actions/workflows/ci.yml/badge.svg)
+
+v0.1 目标「四层资产齐备」已全部完成并推送到 GitHub（Round 4 验收结论见 [docs/VALIDATION.md](docs/VALIDATION.md)）。本地提交前请先跑 [CONTRIBUTING.md](CONTRIBUTING.md) 中的两个校验脚本。
 
 ## 团队协作过程 / Team Process
 
