@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # 注：完整 CI 绿跑记录需 push 后由队长在 Round 6 验证并回填至 docs/VALIDATION.md
+      - name: JSON 校验（递归仓库全部 *.json）
+        run: node .github/scripts/check-json.mjs .
+      - name: 技能 frontmatter 与 rrule 校验
+        run: node .github/scripts/check-skills.mjs skills automations
+
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Markdown 链接检查
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress README.md CONTRIBUTING.md docs/*.md skills/*/SKILL.md mcp/*.md automations/*.md
